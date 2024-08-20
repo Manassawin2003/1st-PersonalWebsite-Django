@@ -155,10 +155,15 @@ https://templatemo.com/tm-578-first-portfolio
                                 {% for profile in profiles%}
                                  <p>{{profile.story }}</p>
                                  {% endfor %}
-                                <h3 class="pt-2 mb-3">My interest</h3>
-                                {% for profile in profiles%}
-                                 <p>{{profile.interestspecial }}</p>
-                                 {% endfor %}
+                                 <h3 class="pt-2 mb-3">My Final Project</h3>
+
+                                         {% for profile in profiles %}
+                                      {% for field in profile.fields.all %}
+                                       {% if field.key == 'finalproject' %}
+                                            <p>{{ field.value }}</p>
+                                                  {% endif %}
+                                                  {% endfor %}
+                                                   {% endfor %}
 
                             </div>
                         </div>
