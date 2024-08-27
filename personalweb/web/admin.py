@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Profile, Addnewfield
+from django.shortcuts import render
+from django.urls import path
+from .models import Profile, Addnewfield, Visitor
 
 class ProfileFieldInline(admin.TabularInline):
     model = Addnewfield
@@ -14,3 +16,4 @@ class ProfileAdmin(admin.ModelAdmin):
 @admin.register(Addnewfield)
 class ProfileFieldAdmin(admin.ModelAdmin):
     list_display = ('profile', 'key')
+
